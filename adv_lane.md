@@ -14,12 +14,12 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/orig_chess.png " chess Calibration"
-[image2]: ./examples/unistorted_road.png "Road"
-[image3]: ./examples/color_binary_image.png " Binary Example"
-[image4]: ./examples/image_with_src_polygon.png "Image with source polygon"
-[image5]: ./examples/polynomials.png "Polynomial computation"
-[image6]: ./examples/example_poly_output.png "Filled Polynomial"
+[image1]: ./output_images/orig_chess.png " chess Calibration"
+[image2]: ./output_images/unistorted_road.png "Road"
+[image3]: ./output_images/color_binary_image.png " Binary Example"
+[image4]: ./output_images/image_with_src_polygon.png "Image with source polygon"
+[image5]: ./output_images/polynomials.png "Polynomial computation"
+[image6]: ./output_images/example_poly_output.png "Filled Polynomial"
 [video1]: ./project_video.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
