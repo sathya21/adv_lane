@@ -15,7 +15,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./examples/orig_chess.png " chess Calibration"
-[image2]: ./examples/unistorted_road.jpg "Road"
+[image2]: ./examples/unistorted_road.png "Road"
 [image3]: ./examples/color_binary_image.png " Binary Example"
 [image4]: ./examples/image_with_src_polygon.png "Image with source polygon"
 [image5]: ./examples/polynomials.png "Polynomial computation"
