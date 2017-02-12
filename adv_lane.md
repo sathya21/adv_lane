@@ -18,12 +18,16 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/undistort_output.png "Undistorted"
-[image2]: ./test_images/test1.jpg "Road Transformed"
-[image3]: ./examples/binary_combo_example.jpg "Binary Example"
-[image4]: ./examples/warped_straight_lines.jpg "Warp Example"
-[image5]: ./examples/color_fit_lines.jpg "Fit Visual"
-[image6]: ./examples/example_output.jpg "Output"
+[image1]: ./examples/orig_chess.png "original chess"
+[image2]: ./examples/undistorted_chess.png "undistorted chess"
+[image3]: ./test_images/straight_lines1.jpg.jpg "Undistorted Road"
+[image4]: ./examples/distorted_road.png "Undistorted Road"
+[image5]: ./examples/color_binary_image.png "Color Binary Example"
+[image6]: ./examples/combined_binary_image.png "Combined Binary Example"
+[image7]: ./examples/image_with_src_polygon.png "Image with source polygon"
+[image8]: ./examples/perspective_image_with_destination.png "Perspective image with destination"
+[image9]: ./examples/polynomials.png "Polynomial computation"
+[image10]: ./examples/example_poly_output.png "Filled Polynomial"
 [video1]: ./project_video.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
@@ -46,17 +50,22 @@ I start by preparing "object points", which will be the (x, y, z) coordinates of
 I then used the output `objpoints` and `imgpoints` to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  I applied this distortion correction to the test image using the `cv2.undistort()` function and obtained this result:
 
 ![alt text][image1]
+![alt text][image2]
 
 ###Pipeline (single images)
 
 ####1. Provide an example of a distortion-corrected image.
 Output of the camera calibration was passed to one of the images and the distortion was corrected. Distortion corrected image can be found below
-![alt text][image2]
+![alt text][image3]
+![alt text][image4]
+
 
 ####2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 I used combination of color and gradient thresholding which can be found in code cell 3 of "./example.ipynb". Results of color binary and combined binary can be found below
 
-![alt text][image3]
+![alt text][image5]
+![alt text][image6]
+
 
 ####3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
@@ -92,13 +101,15 @@ dst = np.float32([
 I verfied that my perspective transformation worked by checking the source and warped image. In the warped image, both the lines appear in parallel
 
 
-![alt text][image4]
+![alt text][image7]
+![alt text][image8]
+
 
 ####4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
 Then I plotted a histogram and identified the left and right peaks. From that i used sliding windows to follow the line till its peak. Code for this can be found in code cell 5 of "./example.ipynb". Results can be found below
 
-![alt text][image5]
+![alt text][image9]
 
 ####5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
@@ -108,7 +119,7 @@ I did this in  code cell 8 of "./example.ipynb".
 
 I implemented this step in code cell 9 of "./example.ipynb".  Here is an example of my result on a test image:
 
-![alt text][image6]
+![alt text][image10]
 
 ---
 
