@@ -121,4 +121,4 @@ Getting the right source and destination points for perspective transformation w
 
 When the polygon is finally plotted, there is a slight spill on to the left side and little bit on the top right side. This could have an issue as the car could think portion of the left side is drivable whereas it has solid yellow line.
 
-To make it more  robust, some more iterations of  perspective transaction is needed to get it right.  
+To make it more  robust, some more iterations of  perspective transaction is needed to get it perfect.  
