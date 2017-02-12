@@ -15,7 +15,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./examples/orig_chess.png " chess Calibration"
-[image2]: ./test_images/straight_lines1.jpg.jpg "Road"
+[image2]: ./examples/unistorted_road.jpg "Road"
 [image3]: ./examples/color_binary_image.png " Binary Example"
 [image4]: ./examples/image_with_src_polygon.png "Image with source polygon"
 [image5]: ./examples/polynomials.png "Polynomial computation"
@@ -31,11 +31,9 @@ The goals / steps of this project are the following:
 
 ####1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
-The code for this step is contained in the first code cell of the IPython notebook located in the first code cell of "./example.ipynb"
+The code for this step is contained in the first code cell of the IPython notebook  example.ipynb
 
-I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  `imgpoints` will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection.  
-
-I then used the output `objpoints` and `imgpoints` to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  I applied this distortion correction to the test image using the `cv2.undistort()` function and obtained this result:
+I first prepared the object points for chessboard. Then all the calibration images were iterated  to find the chessboard corners. When chessboard corner is found, it was appended to objpoints and imgpoints. objpoint is 3D point in real world space and imgpoint is 2D point in image space. Once this is done, objpoints and imgpoints were passed to cv2.calibrateCamera to get camera calibration and distortion coefficients. This was applied to undistort function to get the undistorted image. Original and corrected image used for calibration can be found below
 
 ![alt text][image1]
 
@@ -47,14 +45,14 @@ Output of the camera calibration was passed to one of the images and the distort
 
 
 ####2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
-I used combination of color and gradient thresholding which can be found in code cell 3 of "./example.ipynb". Results of color binary and combined binary can be found below
+I used combination of color and gradient thresholding which can be found in code cell 3 of example.ipynb. Results of color binary and combined binary can be found below
 
 ![alt text][image3]
 
 
 ####3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
-The code for my perspective transform in code cell 4 of "./example.ipynb".  Based on the image, i had chosen the following source and destination co-ordinates and did a perspective transform and then got the warp perspective
+The code for my perspective transform in code cell 4 of example.ipynb.  Based on the image, i had chosen the following source and destination co-ordinates and did a perspective transform and then got the warp perspective
 ```
 top_right_src = [710, 463]
 top_left_src = [575, 463]
@@ -91,17 +89,17 @@ I verfied that my perspective transformation worked by checking the source and w
 
 ####4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-Then I plotted a histogram and identified the left and right peaks. From that i used sliding windows to follow the line till its peak. Code for this can be found in code cell 5 of "./example.ipynb". Results can be found below
+Then I plotted a histogram and identified the left and right peaks. From that i used sliding windows to follow the line till its peak. Code for this can be found in code cell 5 of example.ipynb. Results can be found below
 
 ![alt text][image5]
 
 ####5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-I did this in  code cell 8 of "./example.ipynb".
+I did this in  code cell 8 of example.ipynb.
 
 ####6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
-I implemented this step in code cell 9 of "./example.ipynb".  Here is an example of my result on a test image:
+I implemented this step in code cell 9 of example.ipynb.  Here is an example of my result on a test image:
 
 ![alt text][image6]
 
