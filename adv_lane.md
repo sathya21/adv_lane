@@ -99,7 +99,7 @@ I did this in  code cell 8 of example.ipynb.
 
 ####6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
-I implemented this step in code cell 9 of example.ipynb.  Here is an example of my result on a test image:
+I implemented this step in code cell 8 of example.ipynb.  Here is an example of my result on a test image:
 
 ![alt text][image6]
 
@@ -119,6 +119,6 @@ Here's a [link to my video result](./final_video.mp4)
 
 Getting the right source and destination points for perspective transformation was the biggest challenge. It took some time to understand and get the correct values
 
-When the polygon is finally plotted, there is a slight spill on to the left side and little bit on the top right side. This could have an issue as the car could think portion of the left side is drivable whereas it has solid yellow line.
+When another car is passing, i could see slight  wobbling of the path.
 
-To make it more  robust, some more iterations of  perspective transaction is needed to get it perfect.  
+To make it more  robust, fix the places where there is wobbling.
